@@ -1,0 +1,42 @@
+% ============================================================
+% QUESTION TYPE: WRITTEN (WITH CODE BLOCKS)
+%
+% PEANUT EXAM CODE BLOCK LAYOUT STANDARD
+%
+% AI INSTRUCTION:
+% - Use lstlisting for ALL code blocks
+% - Do NOT use verbatim directly
+% - Language must be specified (e.g., SQL, Python)
+% - Line numbers MUST be enabled
+% - Code blocks are for READING, not answering
+% - Answer space is provided BELOW using \vspace{...}
+%
+% MAIN.TEX DEPENDENCY:
+% - listings + xcolor MUST be loaded in main.tex
+% - lstset configuration MUST live in main.tex (not here)
+%
+% DO NOT redefine lstset in question files
+% ============================================================
+
+\newpage
+\subsection*{Question X}
+
+This question refers to the following code segment:
+
+\begin{lstlisting}[language=SQL]
+UPDATE Products
+SET Price = Price * 0.9;
+-- Missing WHERE clause
+\end{lstlisting}
+
+Answer the following:
+
+\begin{enumerate}[label=(\alph*)]
+\item Explain what error occurred and why it is dangerous.
+
+\vspace{40mm}
+
+\item Propose a corrected version using proper transaction control.
+
+\vspace{40mm}
+\end{enumerate}

@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+
+% ============================================================
+% PEANUT EXAM MAIN FILE
+%
+% ROLE OF THIS FILE:
+% - Defines global packages and formatting
+% - Defines ALL syntax highlighting configuration
+% - Inputs section files (cover + questions)
+%
+% AI INSTRUCTION:
+% - Do NOT place package imports or lstset in section files
+% - ALL styling and configuration lives HERE
+% ============================================================
+
+% --------------------
+% Math & Symbols
+% --------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% --------------------
+% Graphics & Media
+% --------------------
+\usepackage{graphicx}
+\usepackage[inkscapelatex=false]{svg}
+\usepackage{tikz}
+
+% --------------------
+% Tables & Layout
+% --------------------
+\usepackage{array}
+\usepackage{multirow}
+
+% --------------------
+% Lists & Formatting
+% --------------------
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{ulem}
+
+% --------------------
+% Hyperlinks
+% --------------------
+\usepackage{hyperref}
+
+% --------------------
+% Code Blocks & Syntax Highlighting
+% --------------------
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{upquote}
+
+% ============================================================
+% CODE BLOCK CONFIGURATION (GLOBAL)
+%
+% NOTE:
+% - Required for questions with code (SQL, Python, etc.)
+% - Question files must ONLY USE lstlisting
+% - Do NOT redefine lstset in section files
+% ============================================================
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray}
+}
+
+% --------------------
+% Page & Paragraph Style
+% --------------------
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+% ============================================================
+% COVER PAGE
+% ============================================================
+\input{sections/cover.tex}
+
+\newpage
+
+% ============================================================
+% WRITTEN / FREE-RESPONSE QUESTIONS
+% ============================================================
+\input{sections/questions-written.tex}
+
+\newpage
+
+% ============================================================
+% MULTIPLE-CHOICE QUESTIONS
+% ============================================================
+\input{sections/questions-mcq.tex}
+
+\newpage
+
+% ============================================================
+% FILL-IN-THE-BLANK QUESTIONS
+% ============================================================
+\input{sections/questions-fillblanks.tex}
+
+\newpage
+
+% ============================================================
+% TRUE / FALSE QUESTIONS
+% ============================================================
+\input{sections/questions-truefalse.tex}
+
+\newpage
+
+% ============================================================
+% QUESTIONS WITH CODE BLOCK
+% ============================================================
+\input{sections/questions-code.tex}
+
+\end{document}
