@@ -1,56 +1,64 @@
 % ============================================================
-% QUESTION TYPE: TRUE / FALSE
+% PART I: TRUE / FALSE
 %
 % PEANUT EXAM TRUE/FALSE LAYOUT STANDARD
 %
 % AI INSTRUCTION:
-% - Follow this format EXACTLY for True/False questions
-% - Use \subsection*{Problem X} to start the section
-% - Statements are listed using enumerate
-% - Each statement begins with a fixed-width underline for the answer
-% - Answers must be written as TRUE or FALSE
-% - Control spacing using \vspace{...} only
-% - Do NOT convert to MCQ or add explanations
+% - Numbering is  1.1, 1.2, ...  (part number . question number)
+% - Every statement STARTS with \tf (the T / F choice), then the statement
+% - Statements are grouped in enumerate blocks; a new block continues the
+%   count with  start=<n>  so numbering never resets across a page break
+% - itemsep sets the gap between statements (blank lines in the source do NOT)
+% - Do NOT convert to MCQ, do NOT add explanation space, do NOT add answers
+% - 12-15 statements is the usual size for a final, 8-10 for a midterm
 % ============================================================
 
-\newpage
-\subsection*{Problem X}
+\section*{Part I: True or False}
+\textit{Circle \textbf{T} for True or \textbf{F} for False.}
 
-\noindent For each statement below, write \textbf{TRUE} or \textbf{FALSE}
-in the space provided.
+\vspace{0.4cm}
 
-\vspace{0.5cm}
+\begin{enumerate}[label=\textbf{1.\arabic*}, left=0pt, itemsep=0.35cm]
 
-\begin{enumerate}[label=\textbf{X.\arabic*}, left=0pt]
+\item \tf
+A factual or conceptual statement about the course material.
+It must be unambiguous and decidable from the lectures alone.
 
-\item \underline{\hspace{3cm}}  
-This is a factual or conceptual statement related to the course material.
-It should be unambiguous and test conceptual understanding.
 
-\vspace{0.3cm}
 
-\item \underline{\hspace{3cm}}  
-This statement may include inline mathematics such as $f(x)$ or $x_t$,
-or reference standard definitions or properties.
+\item \tf
+A statement may contain inline mathematics such as $f(x)$ or $x_t$,
+or reference a standard definition or property.
 
-\vspace{0.3cm}
 
-\item \underline{\hspace{3cm}}  
-The wording should be precise. Avoid opinion-based or vague statements.
-Negations such as ``not'' may be used carefully.
 
-\vspace{0.3cm}
+\item \tf
+The wording is precise. Avoid opinion-based or vague statements.
+Negations such as ``not'' may be used, but only deliberately.
 
-\item \underline{\hspace{3cm}}  
-Statements may refer to algorithms, models, assumptions, or limitations
+
+
+\item \tf
+A statement may target a common misconception --- the kind of claim
+that sounds right but fails on one specific detail.
+
+
+
+\end{enumerate}
+
+% --- Continue numbering after a group break (or a \newpage) ---
+\begin{enumerate}[label=\textbf{1.\arabic*}, left=0pt, itemsep=0.35cm, start=5]
+
+\item \tf
+A statement may refer to algorithms, models, assumptions, or limitations
 discussed in the course.
 
-\vspace{0.3cm}
 
-\item \underline{\hspace{3cm}}  
+
+\item \tf
 A statement is either entirely correct or entirely incorrect
 given standard textbook assumptions.
 
-\vspace{0.3cm}
+
 
 \end{enumerate}

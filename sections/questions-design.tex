@@ -1,0 +1,88 @@
+% ============================================================
+% PART VII: SYSTEM DESIGN (BIG INTEGRATED QUESTION)
+%
+% PEANUT EXAM DESIGN QUESTION LAYOUT STANDARD
+%
+% AI INSTRUCTION:
+% - ONE large scenario that integrates most topics of the course
+% - The background sits in \noindent\fbox{\parbox{\textwidth}{...}}
+%   with an itemized list of hard requirements (numbers, latencies, scale)
+% - Sub-questions are (a), (b), (c), ... each targeting a DIFFERENT topic,
+%   with a bold title line, then the specific things to address
+% - Requirements must be concrete and quantified so answers can be graded
+% - \vspace after each sub-question is large (80-90mm): this is where
+%   the student designs
+% - Close with a trade-off / "what would you cut" question
+% ============================================================
+
+\section*{Part VII: System Design}
+
+\subsection*{\textit{Title of the System to Be Designed}}
+
+\vspace{3mm}
+
+% The \dimexpr keeps the box inside the margins: an \fbox adds
+% 2\fboxsep + 2\fboxrule on top of the parbox width.
+\noindent\fbox{%
+\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+\textbf{Background:}
+One or two sentences naming the organization and the goal.
+The system must:
+
+\begin{itemize}
+    \item Handle a \textbf{quantified ingest or workload}
+    (e.g. 10,000+ events/sec from 10,000 devices).
+    \item Meet a \textbf{latency or availability target}
+    (e.g. detect within $\leq 50\,\text{ms}$, respond within $\leq 100\,\text{ms}$).
+    \item Support a \textbf{batch or analytical path} alongside the real-time path.
+    \item Serve \textbf{multiple tenants or departments} with isolation guarantees.
+    \item Satisfy a \textbf{security or privacy constraint} that rules out the
+    naive solution.
+\end{itemize}
+}}
+
+\vspace{6mm}
+
+Answer the following design sub-questions.
+\textbf{Your answers must reference specific technologies and concepts from this course.}
+Justify every major design decision.
+
+\vspace{5mm}
+
+%---------------------------------------------------------------
+\begin{enumerate}[label=(\alph*)]
+
+\item \textbf{First Layer of the Design} \\
+Design this layer. Specifically:
+\begin{itemize}
+    \item Identify at least \textbf{three concrete components} and justify each.
+    \item Explain how two specific course concepts apply here.
+    \item State the guarantee you chose and the trade-off it costs you.
+\end{itemize}
+
+\vspace{85mm}
+
+%---------------------------------------------------------------
+\newpage
+\item \textbf{Second Layer of the Design} \\
+Address the requirement that the naive solution cannot satisfy.
+Your answer must include a diagram or a labelled data flow.
+
+\vspace{90mm}
+
+%---------------------------------------------------------------
+\item \textbf{Third Layer of the Design} \\
+Handle the multi-tenant / isolation / scheduling requirement.
+State what happens under contention.
+
+\vspace{85mm}
+
+%---------------------------------------------------------------
+\newpage
+\item \textbf{Failure and Trade-offs} \\
+One component fails. Describe the blast radius, the recovery path,
+and which requirement you would relax first if the budget were halved.
+
+\vspace{90mm}
+
+\end{enumerate}

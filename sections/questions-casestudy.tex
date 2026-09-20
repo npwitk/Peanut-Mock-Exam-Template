@@ -1,0 +1,98 @@
+% ============================================================
+% PART VI: CASE STUDY (CHOOSE-ONE SCENARIO)
+%
+% PEANUT EXAM CASE STUDY LAYOUT STANDARD
+%
+% AI INSTRUCTION:
+% - This part offers several self-contained scenarios; the student picks ONE
+% - The instruction box is \fbox{\parbox{0.9\textwidth}{...}} and states:
+%     how many to choose, the penalty for choosing more, and the rubric split
+% - Each scenario uses \subsubsection*{Scenario A --- <Title>}
+% - Every scenario must be answerable in the SAME amount of space and
+%   must be of comparable difficulty --- students should not be punished
+%   for their choice
+% - Structure each scenario as: Context -> sequence of events -> Your Task
+% - Give a generous \vspace after the task list (usually 100-140mm)
+% - Keep 3 to 5 scenarios
+% ============================================================
+
+\section*{Part VI: Case Study \hfill \normalfont\normalsize(N Points)}
+
+\begin{center}
+\fbox{%
+\parbox{0.9\textwidth}{%
+\textbf{INSTRUCTION:} Choose \textbf{exactly ONE} scenario from the options below.
+Attempting more than one will result in \textbf{zero points} for this entire part.\\[4pt]
+Circle your chosen scenario letter before you begin writing.\\[4pt]
+Your answer will be graded on: \textit{correctness of concepts} (N pts),
+\textit{justification and reasoning} (N pts), and \textit{clarity of presentation} (N pts).
+}}
+\end{center}
+
+\vspace{8mm}
+
+% ============================================================
+\subsubsection*{Scenario A --- Title of the First Scenario}
+
+\textbf{Context:}
+Two or three sentences setting up a concrete system: who runs it,
+what it is built from, and what scale it operates at.
+
+The following sequence of events occurs:
+\begin{enumerate}
+\item The first event (an operator action, a configuration change).
+\item The second event (a failure, a spike, an attack).
+\item The third event (a recovery, a new resource joining).
+\end{enumerate}
+
+\textbf{Your Task:}
+
+\begin{enumerate}[label=(\alph*)]
+\item For each event, identify \textbf{which component(s)} detect the change,
+make the decision, and take corrective action. Explain the role of each
+component in that specific event.
+
+\item Draw a simplified diagram of the system state \textbf{after all events}
+(boxes and labels are sufficient).
+
+\item Extend the failure one step further and explain the impact on the
+running system. Answer in terms of the architecture taught in this course.
+\end{enumerate}
+
+\vspace{120mm}
+
+% ============================================================
+\newpage
+\subsubsection*{Scenario B --- Title of the Second Scenario}
+
+\textbf{Context:}
+A different system with a different failure mode, comparable in difficulty
+to Scenario A.
+
+\textbf{Your Task:}
+
+\begin{enumerate}[label=(\alph*)]
+\item Analyze the situation using the relevant model from the course.
+\item Compute or derive the quantity the scenario depends on.
+\item Recommend a remediation and state its trade-off.
+\end{enumerate}
+
+\vspace{120mm}
+
+% ============================================================
+\newpage
+\subsubsection*{Scenario C --- Title of the Third Scenario}
+
+\textbf{Context:}
+A third option, typically the more design-flavored or more quantitative one,
+so students can play to their strength.
+
+\textbf{Your Task:}
+
+\begin{enumerate}[label=(\alph*)]
+\item Identify the core problem and the constraint that makes it hard.
+\item Propose a solution and justify each decision.
+\item State one thing your solution does \textit{not} handle, and why that is acceptable.
+\end{enumerate}
+
+\vspace{120mm}

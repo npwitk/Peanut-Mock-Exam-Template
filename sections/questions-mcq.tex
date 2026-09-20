@@ -1,25 +1,28 @@
 % ============================================================
-% QUESTION TYPE: MULTIPLE CHOICE
+% PART II: MULTIPLE CHOICE
 %
 % PEANUT EXAM MCQ LAYOUT STANDARD
 %
 % AI INSTRUCTION:
-% - Follow this format EXACTLY for multiple-choice questions
-% - Questions are grouped by PART using \section*
-% - Individual questions are bold-numbered (not subsection)
+% - Numbering is  2.1, 2.2, ...  written as \textbf{2.1} (NOT \subsection)
 % - Choices use enumerate with label=\alph*)
-% - Use \vspace{...} for spacing between questions
-% - Do NOT use \subsection or custom environments
-% - Do NOT alter choice labels or spacing style
+% - Exactly 4 choices unless the question is "select all that apply"
+% - Distractors must be plausible; no joke options, no "all of the above"
+%   unless it is genuinely the answer
+% - Mark multi-select questions explicitly: "Select ALL that apply"
+% - Numbering NEVER resets on a new page
+% - Use \pts{2} at the end of a question line only if the exam is graded
 % ============================================================
 
-\section*{Part I: [PART TITLE]}
-\textit{Choose the best answer for each question.}
+\section*{Part II: Multiple Choice}
+\textit{Choose the \textbf{best answer} for each question.
+Some questions may have more than one correct answer ---
+circle ALL that apply.}
 
 \vspace{5mm}
 
-\textbf{1. This is a multiple-choice question statement.
-It may span one or more lines and should be written clearly.}
+% --- Topic group comment, e.g. % --- Transport Layer --- ---
+\textbf{2.1}  A single-answer question statement, written as one clear sentence.
 
 \begin{enumerate}[label=\alph*)]
 \item First option text
@@ -28,9 +31,10 @@ It may span one or more lines and should be written clearly.}
 \item Fourth option text
 \end{enumerate}
 
-\vspace{15pt}
+\vspace{5mm}
 
-\textbf{2. This question may test definitions, concepts, or recognition.}
+\textbf{2.2}  A question testing a definition, a mechanism, or a comparison
+between two concepts that students routinely confuse.
 
 \begin{enumerate}[label=\alph*)]
 \item Option A
@@ -39,10 +43,10 @@ It may span one or more lines and should be written clearly.}
 \item Option D
 \end{enumerate}
 
-\vspace{15pt}
+\vspace{5mm}
 
-\textbf{3. This question may include inline math such as $x^2 + 1$ or
-ask about structure, grammar, or interpretation.}
+\textbf{2.3}  A question may include inline math such as $x^2 + 1$,
+a short formula, or a numeric scenario to compute.
 
 \begin{enumerate}[label=\alph*)]
 \item Choice 1
@@ -51,24 +55,26 @@ ask about structure, grammar, or interpretation.}
 \item Choice 4
 \end{enumerate}
 
-\vspace{15pt}
+\vspace{5mm}
 
 % ============================================================
 
 \newpage
-\textbf{4. This question continues numbering across pages.
-New pages do NOT reset question numbers.}
+\textbf{2.4}  \textbf{(Select ALL that apply.)}
+A scenario-based question where more than one statement is correct.
+Numbering continues across the page break.
 
 \begin{enumerate}[label=\alph*)]
-\item Option one
-\item Option two
-\item Option three
-\item Option four
+\item A correct statement about the scenario
+\item Another correct statement about the scenario
+\item A plausible but incorrect statement
+\item A statement that is true in general but false in this scenario
 \end{enumerate}
 
-\vspace{15pt}
+\vspace{5mm}
 
-\textbf{5. This question may check application or scenario-based reasoning.}
+\textbf{2.5}  An application question: give a short situation,
+then ask which technique, protocol, or model fits it best.
 
 \begin{enumerate}[label=\alph*)]
 \item Answer choice A
@@ -76,5 +82,3 @@ New pages do NOT reset question numbers.}
 \item Answer choice C
 \item Answer choice D
 \end{enumerate}
-
-\vspace{15pt}

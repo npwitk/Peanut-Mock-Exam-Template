@@ -1,17 +1,38 @@
 \documentclass[12pt]{article}
 
 % ============================================================
-% PEANUT EXAM MAIN FILE
+% PEANUT MOCK EXAM — MAIN FILE (A4)
+% Course: XXX123: Course Name
+% Exam:   [Midterm/Final] Mock Exam
 %
 % ROLE OF THIS FILE:
-% - Defines global packages and formatting
+% - Defines global packages, page geometry, and formatting
 % - Defines ALL syntax highlighting configuration
-% - Inputs section files (cover + questions)
+% - Defines ALL custom exam macros (\blank, \tf, \pts)
+% - Inputs section files (cover + question parts)
 %
 % AI INSTRUCTION:
-% - Do NOT place package imports or lstset in section files
+% - Do NOT place package imports, lstset, or \newcommand in section files
 % - ALL styling and configuration lives HERE
+% - Comment out the \input lines for parts the exam does not use;
+%   do NOT delete the files
+% - Renumber remaining parts so they stay contiguous (I, II, III, ...)
 % ============================================================
+
+% --------------------
+% Page Geometry (A4)
+% --------------------
+\usepackage[a4paper, top=2cm, bottom=2cm, left=2.2cm, right=2.2cm]{geometry}
+
+% --------------------
+% Encoding & Fonts
+% (T1 + textcomp are required by upquote so that straight quotes
+%  inside lstlisting code blocks render correctly)
+% --------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{lmodern}
 
 % --------------------
 % Math & Symbols
@@ -30,7 +51,10 @@
 % Tables & Layout
 % --------------------
 \usepackage{array}
+\usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{multicol}
 
 % --------------------
 % Lists & Formatting
@@ -40,9 +64,16 @@
 \usepackage{ulem}
 
 % --------------------
+% Header / Footer
+% --------------------
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+
+% --------------------
 % Hyperlinks
 % --------------------
 \usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
 
 % --------------------
 % Code Blocks & Syntax Highlighting
@@ -75,49 +106,94 @@
 % --------------------
 % Page & Paragraph Style
 % --------------------
-\pagenumbering{gobble}
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% ============================================================
+% HEADER / FOOTER STYLE (question pages only)
+%
+% AI INSTRUCTION:
+% - Replace the course code/name and [Midterm/Final] below
+% - The cover page deliberately has NO header and NO page number
+% ============================================================
+
+\fancypagestyle{exampage}{
+    \fancyhf{}
+    \fancyhead[L]{\small XXX123: Course Name}
+    \fancyhead[R]{\small {[Midterm/Final]} Mock Exam}
+    \fancyfoot[C]{\small Page \thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+}
+
+% ============================================================
+% CUSTOM COMMANDS (EXAM UTILITIES)
+%
+% \blank{3cm}  -> answer blank of a given width (fill-in-the-blanks)
+% \tf          -> the  T / F  choice printed before a True/False statement
+% \pts{5}      -> right-aligned "(5 pts)" marker on a question line
+% ============================================================
+
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+\newcommand{\tf}{\quad\textbf{T} \quad / \quad \textbf{F}\quad}
+\newcommand{\pts}[1]{\hfill\textit{(#1 pts)}}
 
 \begin{document}
 
 % ============================================================
-% COVER PAGE
+% COVER PAGE (no header/footer, no page number)
 % ============================================================
+\pagenumbering{gobble}
 \input{sections/cover.tex}
 
 \newpage
+\pagenumbering{arabic}
+\pagestyle{exampage}
 
 % ============================================================
-% WRITTEN / FREE-RESPONSE QUESTIONS
-% ============================================================
-\input{sections/questions-written.tex}
-
-\newpage
-
-% ============================================================
-% MULTIPLE-CHOICE QUESTIONS
-% ============================================================
-\input{sections/questions-mcq.tex}
-
-\newpage
-
-% ============================================================
-% FILL-IN-THE-BLANK QUESTIONS
-% ============================================================
-\input{sections/questions-fillblanks.tex}
-
-\newpage
-
-% ============================================================
-% TRUE / FALSE QUESTIONS
+% PART I: TRUE / FALSE
 % ============================================================
 \input{sections/questions-truefalse.tex}
 
 \newpage
 
 % ============================================================
-% QUESTIONS WITH CODE BLOCK
+% PART II: MULTIPLE CHOICE
+% ============================================================
+\input{sections/questions-mcq.tex}
+
+\newpage
+
+% ============================================================
+% PART III: FILL IN THE BLANKS
+% ============================================================
+\input{sections/questions-fillblanks.tex}
+
+\newpage
+
+% ============================================================
+% PART IV: CODE ANALYSIS
 % ============================================================
 \input{sections/questions-code.tex}
+
+\newpage
+
+% ============================================================
+% PART V: WRITTEN / FREE RESPONSE
+% ============================================================
+\input{sections/questions-written.tex}
+
+\newpage
+
+% ============================================================
+% PART VI: CASE STUDY (choose-one scenario)
+% ============================================================
+\input{sections/questions-casestudy.tex}
+
+\newpage
+
+% ============================================================
+% PART VII: SYSTEM DESIGN (big integrated question)
+% ============================================================
+\input{sections/questions-design.tex}
 
 \end{document}

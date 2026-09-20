@@ -1,0 +1,72 @@
+% ============================================================
+% SOLUTION — PART IV: CODE ANALYSIS
+%
+% AI INSTRUCTION:
+% - Name the defect precisely (CWE-style naming is welcome)
+% - Show the traced input and the resulting state/query/output verbatim
+% - The fixed code goes in an lstlisting INSIDE the ans box
+% - The fix must be complete and runnable, not a sketch
+% ============================================================
+
+\section*{Part IV: Code Analysis --- Solution}
+
+\subsection*{Problem 4.1}
+
+\textbf{(a)}
+\begin{ans}
+\textbf{Defect:} name it precisely (e.g. SQL injection via string concatenation,
+CWE-89).
+
+Explain the mechanism in two or three sentences: which input reaches which
+sink, and what the attacker controls.
+\end{ans}
+
+\textbf{(b)}
+\begin{ans}
+With the hostile input, the executed query becomes:
+
+\begin{lstlisting}[language=SQL, numbers=none]
+SELECT * FROM users WHERE username = 'admin'--' AND password = ''
+\end{lstlisting}
+
+Explain why this succeeds: everything after \texttt{--} is a comment, so the
+password predicate is never evaluated.
+\end{ans}
+
+\textbf{(c)}
+\begin{ans}
+\begin{lstlisting}[language=Python]
+import sqlite3
+
+def login(username, password):
+    with sqlite3.connect("users.db") as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT * FROM users WHERE username = ? AND password = ?",
+            (username, password),
+        )
+        return "Login successful" if cursor.fetchone() else "Login failed."
+\end{lstlisting}
+
+State why the fix works: the driver sends the query and the values separately,
+so input is never parsed as SQL.
+\end{ans}
+
+\begin{caution}
+Escaping quotes by hand or blacklisting keywords is \textbf{not} a fix ---
+say so explicitly, because it is the most common wrong answer.
+\end{caution}
+
+\vspace{4mm}
+
+\subsection*{Problem 4.2}
+
+\textbf{(a)}
+\begin{ans}
+Model answer.
+\end{ans}
+
+\textbf{(b)}
+\begin{ans}
+Model answer, with the corrected code.
+\end{ans}

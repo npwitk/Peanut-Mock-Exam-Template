@@ -1,0 +1,224 @@
+\documentclass[12pt]{article}
+
+% ============================================================
+% PEANUT MOCK EXAM — SOLUTION KEY (A4)
+% Course: XXX123: Course Name
+% Exam:   [Midterm/Final] Mock Exam — Answer Key
+%
+% ROLE OF THIS FILE:
+% - Standalone document: compile this file from inside solution/
+% - Defines the answer boxes (ans / keypoint / caution)
+% - Inputs one solution file per exam part
+%
+% AI INSTRUCTION:
+% - The solution key mirrors the exam part-for-part and number-for-number
+% - Every question in the exam MUST appear here, in the same order
+% - Do NOT place package imports or \newtcolorbox in section files
+% ============================================================
+
+% --------------------
+% Page Geometry (A4)
+% --------------------
+\usepackage[a4paper, top=2cm, bottom=2cm, left=2.2cm, right=2.2cm]{geometry}
+
+% --------------------
+% Encoding & Fonts
+% (T1 + textcomp are required by upquote so that straight quotes
+%  inside lstlisting code blocks render correctly)
+% --------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{lmodern}
+
+% --------------------
+% Math & Symbols
+% --------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% --------------------
+% Graphics & Media
+% --------------------
+\usepackage{graphicx}
+% Logo lives at the repo root, one level up from solution/
+\graphicspath{{../}{./}}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds}
+
+% --------------------
+% Tables & Layout
+% --------------------
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+% --------------------
+% Lists & Formatting
+% --------------------
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+% --------------------
+% Colors & Answer Boxes
+% --------------------
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+% --------------------
+% Header / Footer
+% --------------------
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+
+% --------------------
+% Hyperlinks
+% --------------------
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+
+% --------------------
+% Code Blocks
+% --------------------
+\usepackage{listings}
+\usepackage{upquote}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue!80!black}\bfseries,
+    stringstyle=\color{red!70!black},
+    commentstyle=\color{green!50!black},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    backgroundcolor=\color{gray!5}
+}
+
+% --------------------
+% Page & Paragraph Style
+% --------------------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% --------------------
+% Header / Footer Style
+% --------------------
+\fancypagestyle{solutionpage}{
+    \fancyhf{}
+    \fancyhead[L]{\small XXX123: Course Name}
+    \fancyhead[R]{\small \textcolor{red!70!black}{\textbf{SOLUTION KEY}}}
+    \fancyfoot[C]{\small Page \thepage}
+    \renewcommand{\headrulewidth}{0.4pt}
+}
+
+% ============================================================
+% ANSWER ENVIRONMENTS (tcolorbox)
+%
+% \begin{ans} ... \end{ans}              -> blue, the model answer
+% \begin{keypoint} ... \end{keypoint}    -> green, worth memorizing
+% \begin{keypoint}[Formula] ...          -> green with a custom title
+% \begin{caution} ... \end{caution}      -> orange, the common mistake
+% ============================================================
+
+% Blue box: main answer
+\newtcolorbox{ans}{
+    breakable,
+    enhanced,
+    colback=blue!4!white,
+    colframe=blue!45!black,
+    fonttitle=\bfseries\small,
+    title=Answer,
+    top=4pt, bottom=4pt, left=6pt, right=6pt,
+    before upper={\setlength{\parskip}{3pt}}
+}
+
+% Green box: key point / formula
+\newtcolorbox{keypoint}[1][Key Point]{
+    breakable,
+    enhanced,
+    colback=green!5!white,
+    colframe=green!45!black,
+    fonttitle=\bfseries\small,
+    title=#1,
+    top=4pt, bottom=4pt, left=6pt, right=6pt,
+    before upper={\setlength{\parskip}{3pt}}
+}
+
+% Orange box: common mistake
+\newtcolorbox{caution}[1][Common Mistake]{
+    breakable,
+    enhanced,
+    colback=orange!7!white,
+    colframe=orange!60!black,
+    fonttitle=\bfseries\small,
+    title=#1,
+    top=4pt, bottom=4pt, left=6pt, right=6pt,
+    before upper={\setlength{\parskip}{3pt}}
+}
+
+% --------------------
+% Custom Commands
+% --------------------
+\newcommand{\pts}[1]{\hfill\textit{(#1 pts)}}
+\newcommand{\tf}[1]{\textbf{\textcolor{blue!70!black}{#1}}}       % T or F answer
+\newcommand{\correct}[1]{\textbf{\textcolor{green!50!black}{#1}}} % correct MCQ choice
+
+% ============================================================
+
+\begin{document}
+
+\pagenumbering{arabic}
+\pagestyle{solutionpage}
+
+% ============================================================
+% SOLUTION COVER
+% ============================================================
+
+\begin{center}
+    \vspace*{0.6cm}
+    \includegraphics[width=0.05\linewidth]{components/Logo/PeanutLogoPDF.pdf}\\[0.8em]
+    {\Large \textbf{XXX123: Course Name}}\\[0.4em]
+    {\Large \textbf{{[Midterm/Final]} Mock Exam --- Solution Key}}\\[0.3em]
+    {\normalsize curated by \textit{The Peanuts}}\\[1em]
+    \textcolor{red!70!black}{\textbf{\large Not for distribution. For personal review only.}}
+\end{center}
+
+\vspace{0.5cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.3cm}
+
+\noindent\textbf{How to use this solution key:}
+\begin{itemize}
+    \item \colorbox{blue!8}{\strut Blue boxes} contain model answers.
+    \item \colorbox{green!8}{\strut Green boxes} highlight key concepts and formulas worth memorizing.
+    \item \colorbox{orange!10}{\strut Orange boxes} flag common mistakes to avoid.
+    \item For written and design questions, the model answer is one strong response ---
+    your wording does not need to match. Credit is based on correctness of concepts
+    and quality of reasoning.
+\end{itemize}
+
+\vspace{3mm}
+\noindent\rule{\linewidth}{0.6pt}
+
+% ============================================================
+% AI INSTRUCTION: comment out the parts the exam does not contain
+% ============================================================
+\input{sections/sol-part1-truefalse.tex}
+\newpage
+\input{sections/sol-part2-mcq.tex}
+\newpage
+\input{sections/sol-part3-fillblanks.tex}
+\newpage
+\input{sections/sol-part4-code.tex}
+\newpage
+\input{sections/sol-part5-written.tex}
+\newpage
+\input{sections/sol-part6-casestudy.tex}
+\newpage
+\input{sections/sol-part7-design.tex}
+
+\end{document}

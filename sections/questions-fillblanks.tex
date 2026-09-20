@@ -1,52 +1,78 @@
 % ============================================================
-% QUESTION TYPE: FILL IN THE BLANKS
+% PART III: FILL IN THE BLANKS
 %
 % PEANUT EXAM FILL-IN-THE-BLANKS LAYOUT STANDARD
 %
 % AI INSTRUCTION:
-% - Follow this format EXACTLY for fill-in-the-blank questions
-% - Questions are bold-numbered
-% - Blanks are created using \underline{\hspace{<width>}}
-% - Extra context or hints may appear in parentheses
-% - Use \vspace{...} for spacing only
+% - Numbering is  3.1, 3.2, ...  written as \textbf{3.1}
+% - Blanks use \blank{<width>} ONLY (defined in main.tex)
+%   e.g. \blank{2cm} for a number, \blank{3cm} for a term,
+%        \blank{9cm} for a phrase or a full expansion
+% - A blank may appear inside math: $b = \blank{3.5cm} \pmod{q}$
+% - Hints and constraints go in parentheses at the end of the sentence
 % - Do NOT convert to multiple choice or written format
 % - Do NOT add answer boxes
+% - \vspace{4mm} between questions
 % ============================================================
 
-\section*{Part II: [PART TITLE]}
-\textit{Fill in the blanks with the most appropriate answer.
-Extra context or instructions may be provided in parentheses.}
+\section*{Part III: Fill in the Blanks}
+\textit{Fill in each blank with the most appropriate term, algorithm name,
+formula, or phrase. Extra context is provided in parentheses where needed.}
+
+\vspace{4mm}
+
+\textbf{3.1}
+A sentence with one or more blanks embedded in a definition:
+the \blank{3cm} property guarantees that \blank{3cm}
+even when the system is under load.
+
+\vspace{4mm}
+
+\textbf{3.2}
+A blank may sit inside mathematics. In the core equation
+$b = \blank{3.5cm} \pmod{q}$, the added term \blank{3cm}
+is what makes the system computationally hard.
+
+\vspace{4mm}
+
+\textbf{3.3}
+A question may ask for a quantity and its unit:
+the method gives a \blank{3cm} speedup, reducing the cost to
+approximately \blank{2cm} operations.
+
+\vspace{4mm}
+
+\textbf{3.4}
+A question may be driven by a small table or figure.
 
 \vspace{2mm}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Row $\backslash$ Column} & \texttt{col1} & \texttt{col2} & \texttt{col3} \\
+\hline
+alice & --- & Own, R, W & R \\
+\hline
+bob   & --- & R         & Own, R, W \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{2mm}
 
-\textbf{1.}
-This is a sentence with a blank:
-The system \underline{\hspace{3cm}} (to operate) continuously for several hours.
-(It is still running now.)
-
-\vspace{4mm}
-
-\textbf{2.}
-Another sentence testing grammar, terminology, or usage:
-The report \underline{\hspace{3cm}} (to submit) yesterday. (Use passive voice.)
-
-\vspace{4mm}
-
-\textbf{3.}
-This question may involve tense, agreement, or modality:
-They \underline{\hspace{3cm}} (not / to complete) the task yet.
-(Make it negative.)
+Answer derived from the table: \blank{9cm}
 
 \vspace{4mm}
 
-\textbf{4.}
-By the time the experiment started, the data
-\underline{\hspace{3cm}} (to collect).
+\textbf{3.5}
+An acronym expansion: XXXX stands for
+
+\blank{9cm}
+
+\noindent and is used to \blank{5cm}.
 
 \vspace{4mm}
 
-\textbf{5.}
-Technical documents must \underline{\hspace{3cm}} clearly to avoid ambiguity.
-(Use modal verb.)
-
-\vspace{6mm}
+\textbf{3.6}
+A fill-in-the-blank may also complete a sequence of steps:
+first \blank{3cm}, then \blank{3cm}, and finally \blank{3cm}.
+(Answer in order.)

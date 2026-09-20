@@ -1,0 +1,13 @@
+{
+  "name": "peanut-mock-exam",
+  "description": "Peanut mock exam LaTeX template (A4) plus the authoring skill that teaches Claude the Peanut layout standards for every question type and the matching solution key.",
+  "version": "2.0.0",
+  "author": {
+    "name": "Nonprawich Intakaew",
+    "url": "https://github.com/npwitk"
+  },
+  "homepage": "https://github.com/npwitk/Peanut-Mock-Exam-Template",
+  "repository": "https://github.com/npwitk/Peanut-Mock-Exam-Template",
+  "license": "MIT",
+  "keywords": ["latex", "exam", "education", "template", "peanut", "siit"]
+}

@@ -4,5 +4,8 @@
 *.log
 *.out
 *.gz
+*.synctex*
+*.toc
 .DS_Store
 main.pdf
+solution/main.pdf

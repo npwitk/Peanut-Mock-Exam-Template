@@ -1,0 +1,21 @@
+{
+  "name": "peanut",
+  "owner": {
+    "name": "Nonprawich Intakaew",
+    "url": "https://github.com/npwitk"
+  },
+  "metadata": {
+    "description": "The Peanuts' study material templates.",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "peanut-mock-exam",
+      "source": "./",
+      "description": "Write Peanut-style mock exams and solution keys in LaTeX, following the A4 Peanut layout standards.",
+      "version": "2.0.0",
+      "category": "productivity",
+      "keywords": ["latex", "exam", "education", "template"]
+    }
+  ]
+}

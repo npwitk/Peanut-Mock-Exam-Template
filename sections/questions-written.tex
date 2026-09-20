@@ -1,114 +1,98 @@
 % ============================================================
-% QUESTION TYPE: WRITTEN (FREE RESPONSE)
+% PART V: WRITTEN / FREE RESPONSE
 %
-% PEANUT EXAM QUESTION LAYOUT STANDARD
+% PEANUT EXAM WRITTEN QUESTION LAYOUT STANDARD
 %
 % AI INSTRUCTION:
-% - Follow this layout EXACTLY when generating written questions
-% - Use \subsection*{Question X}
-% - Each question begins on a new page
-% - Use \vspace{...} to create answer space
-% - Do NOT use \\[mm] for spacing
-% - Do NOT introduce new sectioning commands or environments
-% - Do NOT alter math formatting
+% - Use \subsection*{Question 1}, \subsection*{Question 2}, ...
+% - Sub-parts use enumerate with label=(\alph*)
+% - Answer space is created with \vspace{...} ONLY. Never use \\[mm]
+% - Size the space to the expected answer:
+%     one-line recall        ~20mm
+%     short explanation      ~30-40mm
+%     derivation / multi-step ~45-60mm
+%     full essay answer      ~80-90mm
+% - Start a new \newpage before a question that will not fit on the page
+% - State explicitly what a complete answer must contain
+%   ("Your answer must include: ... , ... , and ...")
+% - Do NOT alter math formatting; display math uses $$ ... $$
 % ============================================================
 
+\section*{Part V: Written Questions}
+
+% -----------------------------------------------------------
 \subsection*{Question 1}
+% -----------------------------------------------------------
 
-This is a long problem statement describing a numerical or theoretical task.
-It may span multiple sentences and include inline mathematics such as
-$a + b = c$ or $f'(x)$.
+\begin{enumerate}[label=(\alph*)]
 
-Displayed equations can appear as
-$$
-f(x) = x^2 + 3x - 1.
-$$
+\item A conceptual question asking the student to explain a mechanism
+in their own words. Your answer must include: the role of each component,
+the order of the steps, and the property the mechanism guarantees.
 
-The problem may ask the student to perform a computation, derivation,
-or analysis.
+\vspace{40mm}
 
-\vspace{90mm}
+\item A numeric or applied scenario. Given $x = 15$, $y = 4$, and $z = 12$,
+state the conclusion and show the reasoning that leads to it.
 
-% ============================================================
+\vspace{40mm}
 
+\item A ``why'' question: explain what would break if one element were removed
+(a nonce, a lock, a normalization step, a base case).
+
+\vspace{45mm}
+
+\item A short comparison: choose the right tool from a given list for two
+different situations, and justify each choice in one or two sentences.
+
+\vspace{30mm}
+
+\end{enumerate}
+
+% -----------------------------------------------------------
 \newpage
 \subsection*{Question 2}
+% -----------------------------------------------------------
 
-This question introduces given data, matrices, or model equations.
+A question introducing given data, a matrix, a diagram, or a model equation.
 For example, consider the approximation model
 $$
 y = c_1 x + c_2 x^2.
 $$
 
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
 
-\item
-First subproblem description goes here. Students must show all work.
+\item Perform the computation or derivation. Show all work.
 
 \vspace{60mm}
 
-\item
-Second subproblem description goes here. Additional derivation or matrix
-transformations may be required.
+\item Interpret the result: what does it mean for the system in the scenario,
+and what assumption would invalidate it?
 
-\vspace{80mm}
+\vspace{50mm}
 
 \end{enumerate}
 
-% ============================================================
-
+% -----------------------------------------------------------
 \newpage
 \subsection*{Question 3}
+% -----------------------------------------------------------
 
-Consider solving a nonlinear equation
-$$
-g(x) = 0
-$$
-using an iterative numerical method. A starting value is given, and the
-student must perform a fixed number of iterations to obtain an approximation.
+A multi-step problem that integrates two topics from different lectures.
+This is the question that separates memorization from understanding.
 
-\vspace{80mm}
+\begin{enumerate}[label=(\alph*)]
 
-% ============================================================
-
-\newpage
-\subsection*{Question 4}
-
-This question involves a system of equations:
-$$
-\begin{aligned}
-F_1(x_1, x_2) &= 0, \\
-F_2(x_1, x_2) &= 1.
-\end{aligned}
-$$
-
-A starting vector $x^{(0)}$ is provided. Apply one iteration of the specified
-numerical method.
-
-\vspace{60mm}
-
-% ============================================================
-
-\newpage
-\subsection*{Question 5}
-
-This question concerns an initial value problem or boundary value problem
-of the form
-$$
-\frac{du}{dt} = f(t, u), \qquad u(0) = u_0.
-$$
-
-\begin{enumerate}
-
-\item
-Perform one step of the given numerical method with the specified step size.
+\item Step one of the analysis.
 
 \vspace{50mm}
 
-\item
-Using values computed previously, perform a higher-order method or comment
-on stability or accuracy.
+\item Step two, which depends on the answer to (a).
 
 \vspace{50mm}
+
+\item A closing judgment call: recommend an option and defend it.
+
+\vspace{45mm}
 
 \end{enumerate}

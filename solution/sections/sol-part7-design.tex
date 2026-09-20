@@ -1,0 +1,62 @@
+% ============================================================
+% SOLUTION — PART VII: SYSTEM DESIGN
+%
+% AI INSTRUCTION:
+% - A design question has no single right answer: give ONE strong reference
+%   design, then list the alternative choices that also earn full credit
+% - Every requirement in the exam's background box must be traceable to a
+%   decision in this key --- go through them in order
+% - End with the trade-off discussion; that sub-question is where marks are
+%   most often lost
+% ============================================================
+
+\section*{Part VII: System Design --- Solution}
+
+\begin{keypoint}[How this part is graded]
+There is no single correct architecture. Full credit requires that every
+requirement in the background box is addressed by a named technology or
+mechanism from this course, and that each choice is justified against its
+alternative.
+\end{keypoint}
+
+\textbf{(a) First Layer of the Design}
+\begin{ans}
+\textbf{Reference design:} name the three components and their configuration.
+
+\textbf{Justification:} tie each component to the quantified requirement it
+satisfies.
+
+\textbf{Guarantee and trade-off:} state the guarantee chosen and what it costs
+(latency, throughput, storage, complexity).
+
+\textbf{Also acceptable:} the alternative design and the condition under which
+it would be preferred.
+\end{ans}
+
+\textbf{(b) Second Layer of the Design}
+\begin{ans}
+Model answer, including the data flow the question asked to draw:
+source $\rightarrow$ transform $\rightarrow$ sink, with the property enforced
+at each hop.
+\end{ans}
+
+\textbf{(c) Third Layer of the Design}
+\begin{ans}
+Model answer for the isolation / scheduling requirement, including the
+behaviour under contention.
+\end{ans}
+
+\textbf{(d) Failure and Trade-offs}
+\begin{ans}
+\textbf{Blast radius:} what is lost and for how long.
+
+\textbf{Recovery path:} the concrete sequence that restores service.
+
+\textbf{What to relax on half the budget:} name the requirement, and say why
+it is the cheapest one to give up.
+\end{ans}
+
+\begin{caution}
+Listing technologies without justifying them scores near zero on this part.
+The marks are in the \textit{because}.
+\end{caution}

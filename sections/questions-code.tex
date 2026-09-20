@@ -1,27 +1,80 @@
 % ============================================================
-% QUESTION TYPE: WRITTEN (WITH CODE BLOCKS)
+% PART IV: CODE ANALYSIS
 %
 % PEANUT EXAM CODE BLOCK LAYOUT STANDARD
 %
 % AI INSTRUCTION:
-% - Use lstlisting for ALL code blocks
-% - Do NOT use verbatim directly
-% - Language must be specified (e.g., SQL, Python)
-% - Line numbers MUST be enabled
-% - Code blocks are for READING, not answering
-% - Answer space is provided BELOW using \vspace{...}
+% - Use lstlisting for ALL code blocks; never verbatim
+% - Language MUST be specified: [language=Python], [language=SQL], ...
+% - Line numbers are ON (configured globally in main.tex)
+% - Code blocks are for READING; students answer in the space below
+% - Answer space is created with \vspace{...} sized to the expected answer:
+%     short identification  ~25mm
+%     explanation           ~35-40mm
+%     rewrite the code      ~60-70mm
+% - Use \subsection*{Problem 4.1} for each code problem,
+%   and (a), (b), (c) sub-parts inside it
 %
 % MAIN.TEX DEPENDENCY:
 % - listings + xcolor MUST be loaded in main.tex
 % - lstset configuration MUST live in main.tex (not here)
-%
-% DO NOT redefine lstset in question files
+% ============================================================
+
+\section*{Part IV: Code Analysis}
+
+% ============================================================
+
+\subsection*{Problem 4.1}
+
+A short framing sentence that explains where the code comes from
+and why the student is looking at it.
+
+\begin{lstlisting}[language=Python]
+import sqlite3
+
+def login(username, password):
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+
+    query = "SELECT * FROM users WHERE username = '" \
+            + username + "' AND password = '" + password + "'"
+    cursor.execute(query)
+    result = cursor.fetchone()
+
+    conn.close()
+    return "Login successful" if result else "Login failed."
+\end{lstlisting}
+
+\vspace{2mm}
+
+Answer the following:
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Identify the defect in the code above and name it precisely.
+Explain what an attacker (or a user) can make this code do.
+
+\vspace{35mm}
+
+\item Trace the code with a specific hostile or edge-case input.
+Write out the resulting query / state / output.
+
+\vspace{40mm}
+
+\item Rewrite the function so the defect is fully removed.
+Your rewrite must remain functionally equivalent for valid input.
+
+\vspace{60mm}
+
+\end{enumerate}
+
 % ============================================================
 
 \newpage
-\subsection*{Question X}
+\subsection*{Problem 4.2}
 
-This question refers to the following code segment:
+A second code problem in a different language, or a different failure mode
+(concurrency, transaction control, complexity, resource leak).
 
 \begin{lstlisting}[language=SQL]
 UPDATE Products
@@ -29,14 +82,15 @@ SET Price = Price * 0.9;
 -- Missing WHERE clause
 \end{lstlisting}
 
-Answer the following:
-
 \begin{enumerate}[label=(\alph*)]
-\item Explain what error occurred and why it is dangerous.
 
-\vspace{40mm}
+\item Explain what went wrong and why it is dangerous in production.
 
-\item Propose a corrected version using proper transaction control.
+\vspace{35mm}
 
-\vspace{40mm}
+\item Propose a corrected version using proper transaction control,
+and state how you would verify the fix before committing.
+
+\vspace{50mm}
+
 \end{enumerate}

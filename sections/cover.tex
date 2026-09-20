@@ -1,64 +1,83 @@
 % ============================================================
-% PEANUT EXAM COVER PAGE
+% PEANUT EXAM COVER PAGE — XXX123: Course Name
+% [Midterm/Final] Mock Exam
 %
 % AI INSTRUCTION:
-% - This file defines the exam cover layout
-% - Replace ONLY placeholder text (XXX123, Course Name, XX, URLs)
-% - Do NOT change spacing, structure, wording, or humor
+% - Replace ONLY placeholder text (XXX123, Course Name, N, URLs,
+%   duration, conditions, part count, page count)
+% - Keep the structure, the spacing, and the humor
 % - Choice brackets [Midterm/Final] and [Closed/Semi-closed/Open]
-%   MUST remain exactly as written
+%   MUST be resolved to ONE option in the final exam
+% - This page has no header and no page number (set in main.tex)
 % ============================================================
 
 \begin{center}
-    \vspace*{1cm}
+    \vspace*{0.8cm}
 
     % --- Peanut Logo (DO NOT CHANGE) ---
     \includegraphics[width=0.05\linewidth]{components/Logo/PeanutLogoPDF.pdf}\\[1em]
 
     % --- Course Information ---
     {\Large \textbf{XXX123: Course Name}}\\[0.5em]
-    {\textbf{[Midterm/Final] Mock Exam}}\\[2em]
-
-    curated by The Peanuts
+    {\Large \textbf{{[Midterm/Final]} Mock Exam}}\\[0.4em]
+    {\normalsize curated by \textit{The Peanuts}}
 \end{center}
 
-\vspace{1cm}
+\vspace{0.8cm}
 
 % --- Student Information Line ---
-Name\dotfill ID\dotfill Section\dotfill Seat No\dotfill
+Name\dotfill Student ID\dotfill Section\dotfill Seat No\dotfill
 
-\vspace{2cm}
+\vspace{1.5cm}
 
 % --- Exam Conditions ---
-{\large \textbf{Conditions:} [Closed / Semi-closed / Open] Book}
+{\large \textbf{Exam Conditions:} {[Closed / Semi-closed / Open]} Book}
 
-\vspace{0.5cm}
+\vspace{0.4cm}
+
+{\large \textbf{Duration: N Hours}}
+
+\vspace{0.6cm}
+\noindent\rule{\linewidth}{0.6pt}
+\vspace{0.8cm}
 
 % --- Directions ---
 {\large \textbf{Directions:}}
 
 \begin{enumerate}
-\item This exam contains XX pages (including this one).
-If yours has fewer, congratulations, you’ve discovered truncation error.
 
-\item Write your name clearly at the top.
+\item This exam contains \textbf{N parts} and approximately \textbf{N pages}
+(including this one) covering all {[post-midterm / in-syllabus]} content.
+All questions are compulsory. If your exam appears shorter than expected,
+you have encountered a truncation error --- please notify the invigilator.
 
-\item Show your work.
-Partial credit is real, this isn’t binary classification.
+\item \textbf{Show all formulas, derivations, and reasoning.}
+Partial credit is awarded for written questions.
+A correct answer with no justification shown may not receive full marks.
+Partial credit is real, this isn't binary classification.
 
-\item Answers must be written in English.
-Python, MATLAB, or Morse code will not be graded
-(though we’ll admire the commitment).
+\item Parts I--III (True/False, MCQ, Fill in the Blanks) require
+\textbf{concise answers}. For multi-select MCQ, circle \textit{all} correct choices.
 
-\item You may use your cheat sheets.
-You may not use your neighbor’s memory, GPU,
-or ChatGPT API key.
+\item Parts IV--VII require \textbf{written explanations and analysis}.
+Organized, precise answers are preferred over padding.
+Point-form and paragraph format are both acceptable.
+
+\item Answers must be written in \textbf{English}.
+Thai annotations in your working space are acceptable,
+but all final answers and explanations must be in English.
+Morse code will not be graded (though we'll admire the commitment).
+
+\item You may use up to \textbf{N sheets of A4} as a cheat sheet.
+You may not use your neighbor's cheat sheet, their private key,
+or any model trained on this very exam.
 
 \item If your solution diverges,
-you may try reducing your step size or breathing rate.
+you may try reducing your step size or your breathing rate.
+
 \end{enumerate}
 
-\vspace{2mm}
+\vspace{3mm}
 
 \begin{center}
     \textit{For solution,
